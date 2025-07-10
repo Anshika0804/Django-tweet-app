@@ -25,12 +25,6 @@ A microblogging platform (like a mini Twitter clone) built with **Django** and *
 
 ---
 
-## 📸 Screenshots
-
-> *(Add screenshots of tweet list, tweet form, API test if available)*
-
----
-
 ## 📦 API Endpoints
 
 | Method | Endpoint                | Description              |
