@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+  input {
+    color: black !important; /* makes typed text black */
+  }
+
+  label {
+    color: white !important; /* keeps labels white */
+  }
+
+  .errorlist,
+  .errorlist li,
+  .helptext,
+  .helptext li,
+  ul,
+  ul li {
+    color: white !important; /* keeps help text and errors white */
+  }
+</style>
+
+<h2 class="text-white">Register Form</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+<p class="text-white mt-3">
+  Already have an account?
+  <a href="{% url 'login' %}" class="text-info">Login here</a>
+</p>
+{% endblock %}
