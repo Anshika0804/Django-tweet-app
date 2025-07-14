@@ -6,27 +6,38 @@ Chai aur Tweet
 
 {% block content %}
 
-<h1 class="text-center text-white mt-4">Welcome to Django Project </h1>
+<h1 class="text-center text-white mt-4">Welcome to Django Project</h1>
+
+<!-- Optional: Show search keyword -->
+{% if query %}
+<p class="text-center text-light">Showing results for: <strong>{{ query }}</strong></p>
+{% endif %}
 
 <a class="btn btn-primary mb-4" href="{% url 'tweet_create'%}">Create a tweet</a>
+
+<!-- 🟨 If tweets exist, show them -->
+{% if tweets %}
 <div class="container row gap-3">
     {% for tweet in tweets %}
     <div class="card" style="width: 18rem;">
         {% if tweet.photo %}
         <img src="{{ tweet.photo.url }}" class="img-fluid" alt="Tweet Image">
         {% endif %}
-        {% comment %} <img src="{{tweet.photo.url}}" class="card-img-top" alt="..."> {% endcomment %}
         <div class="card-body">
-            <h5 class="card-title">{{tweet.user.username}}</h5>
-            <p class="card-text">{{tweet.text }}</p>
+            <h5 class="card-title">{{ tweet.user.username }}</h5>
+            <p class="card-text">{{ tweet.text }}</p>
             {% if tweet.user == user %}
-            <a href="{% url 'tweet_edit' tweet.id%}" class="btn btn-primary">Edit</a>
-            <a href="{% url 'tweet_delete' tweet.id%}" class="btn btn-primary">Delete</a>
+            <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-primary">Delete</a>
             {% endif %}
         </div>
     </div>
     {% endfor %}
 </div>
 
-{% endblock  %}
+<!-- 🟥 If no tweets match the search -->
+{% else %}
+    <h4 class="text-center text-warning mt-4">No tweets found for your search.</h4>
+{% endif %}
 
+{% endblock %}

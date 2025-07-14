@@ -7,14 +7,28 @@ from django.contrib.auth import login
 from rest_framework import viewsets, permissions
 from .serializers import TweetSerializer
 from rest_framework.parsers import JSONParser, MultiPartParser, FormParser
+from django.db.models import Q
 
 
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
 
+# def tweet_list(request):
+#     tweets = Tweet.objects.all().order_by('-created_at')
+#     return render(request, 'tweet_list.html', {'tweets' : tweets})
+
 def tweet_list(request):
-    tweets = Tweet.objects.all().order_by('-created_at')
+    query = request.GET.get('q')
+
+    if query:
+        tweets = Tweet.objects.filter(
+            Q(text__icontains = query) |
+            Q(user__username__icontains = query)
+        ).order_by('created_at')
+    else:
+        tweets = Tweet.objects.all().order_by('created_at')
+
     return render(request, 'tweet_list.html', {'tweets' : tweets})
 
 @login_required
