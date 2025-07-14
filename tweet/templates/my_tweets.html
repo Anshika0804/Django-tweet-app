@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+My Tweets
+{% endblock %}
+
+{% block content %}
+
+<h2 class="text-center text-white mt-4">My Tweets</h2>
+
+{% if tweets %}
+<div class="container row gap-3">
+    {% for tweet in tweets %}
+    <div class="card" style="width: 18rem;">
+        {% if tweet.photo %}
+        <img src="{{ tweet.photo.url }}" class="img-fluid" alt="Tweet Image">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">@{{ tweet.user.username }}</h5>
+            <p class="card-text">{{ tweet.text }}</p>
+            <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+    <h5 class="text-center text-warning mt-4">You haven't posted any tweets yet.</h5>
+{% endif %}
+
+{% endblock %}

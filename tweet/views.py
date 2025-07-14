@@ -29,7 +29,10 @@ def tweet_list(request):
     else:
         tweets = Tweet.objects.all().order_by('created_at')
 
-    return render(request, 'tweet_list.html', {'tweets' : tweets})
+    return render(request, 'tweet_list.html', {
+        'tweets': tweets,
+        'query': query  
+    })
 
 @login_required
 def tweet_create(request):
@@ -79,7 +82,10 @@ def register(request):
         form = UserRegistrationForm()
     return render(request, 'registration/register.html', {'form' : form})
 
-
+@login_required
+def my_tweets(request):
+    tweets = Tweet.objects.filter(user=request.user).order_by('created_at')
+    return render(request, 'my_tweets.html', {'tweets': tweets})
 
 class TweetViewSet(viewsets.ModelViewSet):
     queryset = Tweet.objects.all().order_by('-created_at')

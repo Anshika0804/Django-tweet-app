@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    {% block head_extra %}{% endblock %}  
     <title>
         {% block title %}
         Tweet Page
@@ -46,6 +47,7 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
             <a href="{% url 'tweet_list' %}" class="btn btn-primary mx-2">Tweet Home</a>
+            <a href="{% url 'my_tweets' %}" class="btn btn-primary mx-2">My Tweets</a>
             {% if user.is_authenticated %}
             <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
@@ -62,5 +64,15 @@
         {% block content %}
         {% endblock %}
     </div>
+    <script>
+    window.addEventListener('pageshow', function () {
+        const searchInput = document.querySelector('input[name="q"]');
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (searchInput && !urlParams.has('q')) {
+        searchInput.value = '';
+        }
+    });
+    </script>
 </body>
 </html>
