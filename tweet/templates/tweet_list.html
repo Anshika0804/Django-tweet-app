@@ -37,17 +37,19 @@ Chai aur Tweet
         </div>
 
         <!-- ✅ COMMENTS Section START -->
-        <div class="card-body border-top bg-white text-dark" style="font-family: 'Georgia', serif;">
-            <h6 class="mb-3">💬 Comments:</h6>
-            {% for comment in tweet.comments.all %}
-                <p class="mb-2">
-                    <strong style="font-weight: 600;">{{ comment.user.username }}:</strong>
-                    <span style="font-style: italic;">{{ comment.content }}</span>
-                </p>
-            {% empty %}
-                <p class="text-muted">No comments yet.</p>
-            {% endfor %}
+        <div class="card-body border-top bg-light text-dark">
+            <h6>💬 Comments:</h6>
+            
+            {% if tweet.comments.count == 0 %}
+               <p class="text-muted">No comments yet.</p>
+            {% endif %}
+
+            <!-- Button to open full comment page -->
+            <a href="{% url 'comment_list' tweet.id %}" class="btn btn-outline-primary btn-sm mt-2">
+                View/Add Comments
+            </a>
         </div>
+
         <!-- ✅ COMMENT FORM -->
         {% if user.is_authenticated %}
         <div class="card-footer">
