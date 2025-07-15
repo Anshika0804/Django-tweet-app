@@ -24,4 +24,5 @@ urlpatterns = [
     path("", include("tweet.urls")),  # if you want your app on root
     path("accounts/", include("accounts.urls")),  
     path("accounts/", include("django.contrib.auth.urls")),
+    path("comment/", include("comments.urls"))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

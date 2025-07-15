@@ -17,12 +17,13 @@ Chai aur Tweet
 <p class="text-center text-light">Showing results for: <strong>{{ query }}</strong></p>
 {% endif %}
 
-<a class="btn btn-primary mb-4" href="{% url 'tweet_create'%}">Create a tweet</a>
+<a class="btn btn-primary mb-4" href="{% url 'tweet_create' %}">Create a tweet</a>
+
 <!-- 🟨 If tweets exist, show them -->
 {% if tweets %}
 <div class="container row gap-3">
     {% for tweet in tweets %}
-    <div class="card" style="width: 18rem;">
+    <div class="card text-dark" style="width: 18rem;">
         {% if tweet.photo %}
         <img src="{{ tweet.photo.url }}" class="img-fluid" alt="Tweet Image">
         {% endif %}
@@ -31,9 +32,35 @@ Chai aur Tweet
             <p class="card-text">{{ tweet.text }}</p>
             {% if tweet.user == user %}
             <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">Edit</a>
-            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-primary">Delete</a>
+            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger">Delete</a>
             {% endif %}
         </div>
+
+        <!-- ✅ COMMENTS Section START -->
+        <div class="card-body border-top bg-white text-dark" style="font-family: 'Georgia', serif;">
+            <h6 class="mb-3">💬 Comments:</h6>
+            {% for comment in tweet.comments.all %}
+                <p class="mb-2">
+                    <strong style="font-weight: 600;">{{ comment.user.username }}:</strong>
+                    <span style="font-style: italic;">{{ comment.content }}</span>
+                </p>
+            {% empty %}
+                <p class="text-muted">No comments yet.</p>
+            {% endfor %}
+        </div>
+        <!-- ✅ COMMENT FORM -->
+        {% if user.is_authenticated %}
+        <div class="card-footer">
+            <form method="POST" action="{% url 'add_comment' tweet.id %}">
+                {% csrf_token %}
+                <div class="mb-2">
+                    <textarea name="content" rows="2" class="form-control" placeholder="Add a comment..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-sm btn-outline-primary">Comment</button>
+            </form>
+        </div>
+        {% endif %}
+        <!-- ✅ COMMENTS Section END -->
     </div>
     {% endfor %}
 </div>
