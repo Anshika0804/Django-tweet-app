@@ -1,0 +1,362 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-07-07T10:21:14.522Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Anshika - This is th",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-07-15T06:15:18.790Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "1",
+    "object_repr": "Anshika",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-07-15T06:17:36.151Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Anshika's Profile",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Full name\", \"Bio\", \"Date of birth\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-07-15T06:21:09.515Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Anshika's Profile",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$f6UHfNBifTnkhtluDU6SWP$L7ps4IFmVw6oNGhaESJ8orEQYV55mofox1RDXKjk1n4=",
+    "last_login": "2025-07-15T12:17:58.398Z",
+    "is_superuser": true,
+    "username": "Anshika",
+    "first_name": "Anshika",
+    "last_name": "Rai",
+    "email": "anshikacoder10@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-07-07T06:49:23Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$3jvG8niPYCG5I4fEslygHS$hlinb2nzgEuVkEsWwk8G4LL5Z4Pg/CP62J2d3dJuUPU=",
+    "last_login": "2025-07-10T17:08:48.160Z",
+    "is_superuser": false,
+    "username": "shivam",
+    "first_name": "",
+    "last_name": "",
+    "email": "skrcoder07@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-09T09:43:01.173Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$hXise7h8taazbjAamc8JCd$ffpwynB+IKW4pqP2vb5ppmAoW6zt8crTnqWlBLccM6I=",
+    "last_login": "2025-07-09T09:54:24.864Z",
+    "is_superuser": false,
+    "username": "Edward",
+    "first_name": "",
+    "last_name": "",
+    "email": "test@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-09T09:54:24.585Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$8XFwmXQ9NWHrZl5hBMlQt0$pjl4wdzdJ07+7UDhlotR5MiEPCVFHkcXtun+Dv+Uruk=",
+    "last_login": "2025-07-11T04:03:41.157Z",
+    "is_superuser": true,
+    "username": "Anshika123",
+    "first_name": "",
+    "last_name": "",
+    "email": "anshikacoder10@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-07-10T14:24:31.699Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$aMEpC4XENIiCeJqlqews67$T2phF8kZ21ei/8z2c+OM8jUlGn+wcN/kratiVtG4N/I=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "testuser",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-15T05:07:01.749Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$nwjyGyvPYEns4eUuakAILf$ETtEdWpzPJchSLflfMUx8k2fk7EB2lcSdXYEQFawhGQ=",
+    "last_login": "2025-07-15T05:11:05.708Z",
+    "is_superuser": false,
+    "username": "testuser123",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-15T05:08:52.761Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "8xb52oyfx9c1tqn1jsf194se2yaoiac3",
+  "fields": {
+    "session_data": ".eJxVjDEOwjAMRe-SGUWu2sQxIztnqOLYoQWUSE07Ie4OlTrA-t97_2XGuK3TuDVdxlnM2Qzm9LtxTA8tO5B7LLdqUy3rMrPdFXvQZq9V9Hk53L-DKbbpW6NzyBgoMAOCDh4UespRg-8TZWbXO_KZ0Asl6bosAIiEEDrV6JJ5fwDQ2Tea:1uZujQ:3LqTlyU7UBhrwtnHGjbAdJrIlmvkKx274NbqT_o0FWQ",
+    "expire_date": "2025-07-24T17:06:48.186Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "irejq77tqjh1pvwcdso64mu7g1e30e8d",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pBpoRZcuu8ZyAwzSNVAUtqV8e7apAvd_vfef6mA25rD1mQJM6uL6tTpdyOMDyk74DuWW9WxlnWZSe-KPmjTU2V5Xg_37yBjy9_aJ2NwFAL2lowIDwwMowGhHjonySVveUBGQ313JojQg4002DGSS1a9P_2zOHg:1ubebe:bcztTuoQ6xuVxw2Dz3r6lDjnnVPv7LF2UjFJsRTftd4",
+    "expire_date": "2025-07-29T12:17:58.399Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "qxcp0ovifntpxqqgfhk6onp0mkrqs30j",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pBpoRZcuu8ZyAwzSNVAUtqV8e7apAvd_vfef6mA25rD1mQJM6uL6tTpdyOMDyk74DuWW9WxlnWZSe-KPmjTU2V5Xg_37yBjy9_aJ2NwFAL2lowIDwwMowGhHjonySVveUBGQ313JojQg4002DGSS1a9P_2zOHg:1ubYw2:5f5xFyAKLNjUhroWew5AJfOvQAbDmzyHdJC_u32ZulY",
+    "expire_date": "2025-07-29T06:14:38.975Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "u6qzbfpsj64jmrdg8k897ic4ng4n7dyh",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHI8HTpvt9AGAakaiAp7cr479qkC93ec859sRC3tYZt5CXMxC5MstPvhjE9ctsB3WO7dZ56W5cZ-a7wgw4-dcrP6-H-HdQ46rfW1pGK2sjkzyAQAHMSnowtTkmikh2iTeiF8QDJo4QildZoLJaY0bH3B-JcOEE:1uZS3c:YlI_c0e1VMUMuGQf8TDJ6iKtk-ybJvZgfCNFtI-cTQU",
+    "expire_date": "2025-07-23T10:29:44.203Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "zsq8vleaqv6m1km5ekzle6diavy5ud41",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pBpoRZcuu8ZyAwzSNVAUtqV8e7apAvd_vfef6mA25rD1mQJM6uL6tTpdyOMDyk74DuWW9WxlnWZSe-KPmjTU2V5Xg_37yBjy9_aJ2NwFAL2lowIDwwMowGhHjonySVveUBGQ313JojQg4002DGSS1a9P_2zOHg:1ubNx3:RnjmtUmQKgg2ugzWRR_rV2WDtnrvkvQIMQzZd4LWCF8",
+    "expire_date": "2025-07-28T18:30:57.410Z"
+  }
+},
+{
+  "model": "tweet.tweet",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "text": "This is the first tweet for the Big Project",
+    "photo": "photos/education.gif",
+    "created_at": "2025-07-07T10:21:14.520Z",
+    "updated_at": "2025-07-09T10:47:18.703Z"
+  }
+},
+{
+  "model": "tweet.tweet",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "text": "Hello World",
+    "photo": "photos/coding_OrqUOx0.gif",
+    "created_at": "2025-07-09T06:45:33.616Z",
+    "updated_at": "2025-07-09T06:45:33.616Z"
+  }
+},
+{
+  "model": "tweet.tweet",
+  "pk": 4,
+  "fields": {
+    "user": 2,
+    "text": "Hello....this is my first tweet",
+    "photo": "photos/certificate.gif",
+    "created_at": "2025-07-09T09:43:50.135Z",
+    "updated_at": "2025-07-09T09:43:50.135Z"
+  }
+},
+{
+  "model": "tweet.tweet",
+  "pk": 5,
+  "fields": {
+    "user": 3,
+    "text": "Hi...this is my first tweet",
+    "photo": "photos/trophy.gif",
+    "created_at": "2025-07-09T09:54:54.929Z",
+    "updated_at": "2025-07-09T09:54:54.929Z"
+  }
+},
+{
+  "model": "tweet.tweet",
+  "pk": 12,
+  "fields": {
+    "user": 1,
+    "text": "Hello aa",
+    "photo": "photos/os_process_scheduler.png",
+    "created_at": "2025-07-09T10:47:55.045Z",
+    "updated_at": "2025-07-11T04:17:50.798Z"
+  }
+},
+{
+  "model": "tweet.tweet",
+  "pk": 18,
+  "fields": {
+    "user": 4,
+    "text": "This is a tweet from Postman!",
+    "photo": "",
+    "created_at": "2025-07-10T19:07:00.455Z",
+    "updated_at": "2025-07-10T19:07:00.455Z"
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 4,
+  "fields": {
+    "user": 1,
+    "tweet": 1,
+    "content": "sfsdfwefwvvvv",
+    "created_at": "2025-07-15T10:34:27.069Z"
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 5,
+  "fields": {
+    "user": 1,
+    "tweet": 1,
+    "content": "hh",
+    "created_at": "2025-07-15T11:15:01.281Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "full_name": "Anshika Rai",
+    "bio": "A passionate developer",
+    "date_of_birth": "2004-08-20",
+    "profile_picture": "profile_pics/pic2.jpg"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "full_name": "",
+    "bio": "",
+    "date_of_birth": null,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "full_name": "",
+    "bio": "",
+    "date_of_birth": null,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 4,
+  "fields": {
+    "user": 4,
+    "full_name": "",
+    "bio": "",
+    "date_of_birth": null,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 5,
+  "fields": {
+    "user": 5,
+    "full_name": "",
+    "bio": "",
+    "date_of_birth": null,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 6,
+  "fields": {
+    "user": 6,
+    "full_name": "",
+    "bio": "",
+    "date_of_birth": null,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "d3dfa3c198aaeeac1597d14fef34d09b44a60106",
+  "fields": {
+    "user": 4,
+    "created": "2025-07-10T15:23:43.334Z"
+  }
+}
+]
