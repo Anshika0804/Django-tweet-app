@@ -1,77 +1,59 @@
 # 🐦 Django Tweet App
 
-A microblogging platform (like a mini Twitter clone) built with **Django** and **Django REST Framework**, allowing users to register, log in, post tweets, upload images, and interact with a RESTful API.
+A microblogging platform (mini Twitter clone) built with **Django** and **Django REST Framework**. Users can register, post tweets with images, comment on tweets, manage their profiles, and interact through RESTful APIs.
 
 ---
 
 ## 🚀 Features
 
-- 🔐 User Registration & Authentication
-- ✍️ Create, Edit, and Delete Tweets
-- 🖼️ Tweet with Images (media upload)
-- 🧠 Token-based Authentication (via DRF)
-- 📬 API Access via Postman or cURL
-- 🗂️ Admin panel to manage tweets and users
+### 🔐 Authentication
+- User Registration & Login (Session-based)
+- Token-based Authentication for APIs (DRF)
+
+### 🐥 Tweets
+- Create, Edit, Delete Tweets
+- Upload images with tweets
+- View all tweets
+- See only your own tweets
+
+### 💬 Comments
+- Add, Edit, and Delete Comments on Tweets
+- Comment management on a separate page to reduce clutter
+
+### 🙋 User Profiles
+- Each user has a profile (auto-created on signup)
+- Fields: Full Name, Bio, Date of Birth, Profile Picture
+- View Profile Page
+- Edit Profile Page with file upload
+
+### 📬 Admin Panel
+- Full control over users, tweets, comments, and profiles
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Backend**: Django, Django REST Framework
-- **Frontend**: Django Templates (HTML/CSS)
-- **Database**: SQLite (default)
-- **Authentication**: Session-based + Token (DRF)
-- **Tools**: Postman, cURL, Git, GitHub
+| Layer        | Tools/Frameworks                |
+|--------------|---------------------------------|
+| Backend      | Django, Django REST Framework   |
+| Frontend     | Django Templates (HTML, CSS)    |
+| Database     | SQLite (default)                |
+| Auth         | Django Sessions & DRF Tokens    |
+| Tools        | Git, GitHub, Postman, cURL      |
 
 ---
 
 ## 📦 API Endpoints
 
-| Method | Endpoint                | Description              |
-|--------|-------------------------|--------------------------|
-| GET    | `/tweet/tweets/`        | List all tweets          |
-| POST   | `/tweet/tweets/`        | Create a new tweet       |
-| GET    | `/tweet/tweets/<id>/`   | Retrieve a tweet         |
-| PUT    | `/tweet/tweets/<id>/`   | Update a tweet           |
-| DELETE | `/tweet/tweets/<id>/`   | Delete a tweet           |
-| POST   | `/tweet/api-token-auth/`| Get Auth Token           |
+| Method | Endpoint                    | Description               |
+|--------|-----------------------------|---------------------------|
+| GET    | `/tweet/tweets/`            | List all tweets           |
+| POST   | `/tweet/tweets/`            | Create a tweet            |
+| GET    | `/tweet/tweets/<id>/`       | Get tweet details         |
+| PUT    | `/tweet/tweets/<id>/`       | Update a tweet            |
+| DELETE | `/tweet/tweets/<id>/`       | Delete a tweet            |
+| POST   | `/tweet/api-token-auth/`    | Get auth token (DRF)      |
 
-🔐 Use `Authorization: Token <your_token>` in headers for authenticated requests.
-
----
-
-## 🧪 Testing with cURL
-
-```bash
-# Authenticate
-curl -X POST http://127.0.0.1:8000/tweet/api-token-auth/ \
-  -d "username=yourusername&password=yourpassword"
-
-# Create a tweet
-curl -X POST http://127.0.0.1:8000/tweet/tweets/ \
-  -H "Authorization: Token your_token" \
-  -H "Content-Type: application/json" \
-  -d '{"text": "Hello from cURL!"}'
-
-
-🧰 Setup Instructions
-
-# Clone the repo
-git clone https://github.com/Anshika0804/Django-tweet-app.git
-cd Django-tweet-app
-
-# Create and activate virtual environment
-python3 -m venv .venv
-source .venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run migrations
-python manage.py migrate
-
-# Create superuser
-python manage.py createsuperuser
-
-# Start server
-python manage.py runserver
+**🔐 Auth Note**: Use this header for API access:
+```http
+Authorization: Token your_token_here
