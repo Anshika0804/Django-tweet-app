@@ -15,6 +15,6 @@ urlpatterns = [
     path('my-tweets/', views.my_tweets, name='my_tweets'), 
 
     # API Routes
-    path('', include(router.urls)),                        
+    path('api/', include(router.urls)),                        
     path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
 ]
